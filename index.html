@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Njem BRT - Pitch Deck</title>
+    <title>Njem Enugu - Pitch Deck</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚌</text></svg>">
 
-    <!-- Google Fonts: Inter + Manrope (added for headings) -->
+    <!-- Google Fonts: Inter + Manrope -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -14,14 +14,14 @@
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <script>
-        // Apply theme immediately based on localStorage to prevent FOUC
+        // Apply theme immediately
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
 
-        // Tailwind Configuration (Enhanced Njem BRT Theme)
+        // Tailwind Configuration
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -30,403 +30,74 @@
                         sans: ['Inter', 'system-ui', 'sans-serif'],
                         display: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
                     },
-                    colors: {
-                        primary: { // Green - Slightly enhanced
-                            50: '#f0fdf5', 100: '#dcfce8', 200: '#bbf7d1', 300: '#86efac', 400: '#4ade80',
-                            500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d',
-                        },
-                        secondary: { // Blue - More vibrant
-                            50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa',
-                            500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a',
-                        },
-                        accent: { // Amber/Yellow - Warmer
-                            50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 300: '#fcd34d', 400: '#fbbf24',
-                            500: '#f59e0b', 600: '#d97706', 700: '#b45309', 800: '#92400e', 900: '#78350f',
-                        },
-                        gray: {
-                            50: '#f9fafb', 100: '#f3f4f6', 200: '#e5e7eb', 300: '#d1d5db', 400: '#9ca3af',
-                            500: '#6b7280', 600: '#4b5563', 700: '#374151', 800: '#1f2937', 900: '#111827', 950: '#0c111a'
-                        }
+                    colors: { // Keep original colors
+                        primary: { 50: '#f0fdf5', 100: '#dcfce8', 200: '#bbf7d1', 300: '#86efac', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
+                        secondary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
+                        accent: { 50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 300: '#fcd34d', 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309', 800: '#92400e', 900: '#78350f' },
+                        gray: { 50: '#f9fafb', 100: '#f3f4f6', 200: '#e5e7eb', 300: '#d1d5db', 400: '#9ca3af', 500: '#6b7280', 600: '#4b5563', 700: '#374151', 800: '#1f2937', 900: '#111827', 950: '#0c111a' }
                     },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
-                        'fade-out': 'fadeOut 0.5s ease-in forwards',
-                        'slide-in-up': 'slideInUp 0.6s ease-out forwards',
-                        'slide-in-right': 'slideInRight 0.6s ease-out forwards',
-                        'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
-                        'pulse-slow': 'pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
+                    animation: { // Keep original animations
+                        'fade-in': 'fadeIn 0.5s ease-out forwards', 'fade-out': 'fadeOut 0.5s ease-in forwards', 'slide-in-up': 'slideInUp 0.6s ease-out forwards', 'slide-in-right': 'slideInRight 0.6s ease-out forwards', 'slide-in-left': 'slideInLeft 0.6s ease-out forwards', 'pulse-slow': 'pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite', 'float': 'float 6s ease-in-out infinite',
                     },
-                    keyframes: {
-                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-                        fadeOut: { '0%': { opacity: '1' }, '100%': { opacity: '0' } },
-                        slideInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-                        slideInRight: { '0%': { opacity: '0', transform: 'translateX(-20px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
-                        slideInLeft: { '0%': { opacity: '0', transform: 'translateX(20px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        }
+                    keyframes: { // Keep original keyframes
+                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } }, fadeOut: { '0%': { opacity: '1' }, '100%': { opacity: '0' } }, slideInUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }, slideInRight: { '0%': { opacity: '0', transform: 'translateX(-20px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } }, slideInLeft: { '0%': { opacity: '0', transform: 'translateX(20px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } }, float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
                     }
                 }
             }
         }
     </script>
 
-    <!-- Lucide Icons via CDN - FIXED -->
+    <!-- Lucide Icons via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
 
-    <!-- Custom Styles -->
+    <!-- Custom Styles (Keep original styling structure) -->
     <style>
-        /* Base Styling */
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Manrope', 'Inter', sans-serif;
-        }
-
-        /* Slide System Improvements */
-        .slide {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            opacity: 0;
-            transition: opacity 0.6s ease-in-out, transform 0.6s ease-out;
-            pointer-events: none;
-            overflow-y: auto;
-            padding: 5rem 2rem 8rem 2rem; /* Increased padding */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transform: translateY(15px); /* Subtle initial offset */
-        }
-
-        .slide.active {
-            opacity: 1;
-            pointer-events: auto;
-            z-index: 10;
-            transform: translateY(0);
-        }
-
-        .slide-content {
-            max-width: 1200px; /* Slightly wider */
-            width: 100%;
-            position: relative;
-        }
-
-        /* Improved Navigation Buttons */
-        .nav-button {
-            position: fixed;
-            bottom: 2rem; /* Moved up slightly */
-            z-index: 50;
-            background-color: rgba(255, 255, 255, 0.9); /* More opaque */
-            color: #16a34a;
-            border-radius: 9999px;
-            padding: 0.75rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-            display: inline-flex; /* Added */
-            align-items: center; /* Added */
-            justify-content: center; /* Added */
-        }
-
-        .nav-button:hover {
-            background-color: #16a34a;
-            color: white;
-            transform: scale(1.1) translateY(-2px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-button:active {
-            transform: scale(1.05) translateY(0);
-        }
-
-        .nav-button:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-            transform: scale(1);
-            box-shadow: none;
-        }
-
-        .dark .nav-button {
-            background-color: rgba(31, 41, 55, 0.9);
-            color: #4ade80;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.25), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-        }
-
-        .dark .nav-button:hover {
-            background-color: #15803d;
-            color: white;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Improved Theme Toggle */
-        #theme-toggle {
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            z-index: 50;
-            border-radius: 9999px;
-            padding: 0.625rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            transition: all 0.2s ease-in-out;
-        }
-
-        #theme-toggle:hover {
-            transform: scale(1.1) rotate(12deg);
-        }
-
-        /* Enhanced Progress Bar */
-        #progress-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            height: 6px;
-            background-color: #16a34a;
-            z-index: 60;
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .dark #progress-bar {
-            background-color: #4ade80;
-            box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Enhanced Feature Lists */
-        .feature-list li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            transition: transform 0.2s ease;
-        }
-
-        .feature-list li:hover {
-            transform: translateX(5px);
-        }
-
-        /* Icon styling improvements */
-        .feature-list li i[data-lucide],
-        .feature-list li svg.lucide {
-            margin-right: 0.875rem;
-            margin-top: 0.175rem;
-            flex-shrink: 0;
-            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
-        }
-
-        .dark .feature-list li i[data-lucide],
-        .dark .feature-list li svg.lucide {
-            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
-        }
-
-        /* Animation delay helpers */
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        .delay-500 { animation-delay: 0.5s; }
-        .delay-600 { animation-delay: 0.6s; }
-        .delay-700 { animation-delay: 0.7s; }
-        .delay-800 { animation-delay: 0.8s; }
-
-        /* Enhanced icon coloring with subtle dropshadows */
-        .icon-primary {
-            color: #16a34a;
-            filter: drop-shadow(0 1px 1px rgba(22, 163, 74, 0.1));
-        }
-        .dark .icon-primary {
-            color: #4ade80;
-            filter: drop-shadow(0 1px 2px rgba(74, 222, 128, 0.2));
-        }
-
-        .icon-secondary {
-            color: #2563eb;
-            filter: drop-shadow(0 1px 1px rgba(37, 99, 235, 0.1));
-        }
-        .dark .icon-secondary {
-            color: #60a5fa;
-            filter: drop-shadow(0 1px 2px rgba(96, 165, 250, 0.2));
-        }
-
-        .icon-accent {
-            color: #d97706;
-            filter: drop-shadow(0 1px 1px rgba(217, 119, 6, 0.1));
-        }
-        .dark .icon-accent {
-            color: #fbbf24;
-            filter: drop-shadow(0 1px 2px rgba(251, 191, 36, 0.2));
-        }
-
+        body { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', 'Inter', sans-serif; }
+        .slide { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0; transition: opacity 0.6s ease-in-out, transform 0.6s ease-out; pointer-events: none; overflow-y: auto; padding: 6rem 2rem 8rem 2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; transform: translateY(15px); }
+        .slide.active { opacity: 1; pointer-events: auto; z-index: 10; transform: translateY(0); }
+        .slide-content { max-width: 1000px; width: 100%; position: relative; min-height: 60vh; } /* Ensure min height */
+        .nav-button { position: fixed; bottom: 2rem; z-index: 50; background-color: rgba(255, 255, 255, 0.9); color: #16a34a; border-radius: 9999px; padding: 0.75rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); display: inline-flex; align-items: center; justify-content: center; }
+        .nav-button:hover { background-color: #16a34a; color: white; transform: scale(1.1) translateY(-2px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+        .nav-button:active { transform: scale(1.05) translateY(0); }
+        .nav-button:disabled { opacity: 0.3; cursor: not-allowed; transform: scale(1); box-shadow: none; }
+        .dark .nav-button { background-color: rgba(31, 41, 55, 0.9); color: #4ade80; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.25), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
+        .dark .nav-button:hover { background-color: #15803d; color: white; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2); }
+        #theme-toggle { position: fixed; top: 1.5rem; right: 1.5rem; z-index: 50; border-radius: 9999px; padding: 0.625rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); transition: all 0.2s ease-in-out; }
+        #theme-toggle:hover { transform: scale(1.1) rotate(12deg); }
+        #progress-bar { position: fixed; bottom: 0; left: 0; height: 6px; background-color: #16a34a; z-index: 60; transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1); }
+        .dark #progress-bar { background-color: #4ade80; box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.3); }
+        .bullet-list li { margin-bottom: 1.125rem; display: flex; align-items: flex-start; }
+        .bullet-list li i[data-lucide] { margin-right: 0.875rem; margin-top: 0.175rem; flex-shrink: 0; width: 1.25rem; height: 1.25rem; } /* w-5 h-5 */
+        .delay-100 { animation-delay: 0.1s; } .delay-200 { animation-delay: 0.2s; } .delay-300 { animation-delay: 0.3s; } .delay-400 { animation-delay: 0.4s; } .delay-500 { animation-delay: 0.5s; }
+        .icon-primary { color: #16a34a; } .dark .icon-primary { color: #4ade80; }
+        .icon-secondary { color: #2563eb; } .dark .icon-secondary { color: #60a5fa; }
+        .icon-accent { color: #d97706; } .dark .icon-accent { color: #fbbf24; }
         .icon-success { color: #16a34a; } .dark .icon-success { color: #4ade80; }
         .icon-neutral { color: #6b7280; } .dark .icon-neutral { color: #9ca3af; }
         .icon-warning { color: #f59e0b; } .dark .icon-warning { color: #fcd34d; }
         .icon-danger { color: #ef4444; } .dark .icon-danger { color: #f87171; }
-
-        /* Icon grid layout improved */
-        .icon-grid-center {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem; /* Added gap */
-        }
-
-        /* Style individual grid items */
-        .icon-grid-center > div {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center icon above text */
-            justify-content: flex-start; /* Align top */
-            text-align: center;
-            padding: 1rem; /* Added padding */
-            transition: all 0.2s ease-out;
-        }
-        .icon-grid-center > div:hover {
-             transform: scale(1.05);
-        }
-        .icon-grid-center > div i[data-lucide] {
-             margin-bottom: 0.75rem; /* Space between icon and text */
-        }
-
-        /* Card hover effects */
-        .hover-card {
-            transition: all 0.3s ease;
-        }
-
-        .hover-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-        }
-
-        .dark .hover-card:hover {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Ensure Lucide icons inherit color and size */
-        i[data-lucide] {
-             display: inline-block; /* Needed for sizing */
-             line-height: 1; /* Helps alignment */
-        }
-
-        /* Specific size classes for i[data-lucide] */
-        .w-4 { width: 1rem; } .h-4 { height: 1rem; }
-        .w-5 { width: 1.25rem; } .h-5 { height: 1.25rem; }
-        .w-6 { width: 1.5rem; } .h-6 { height: 1.5rem; }
-        .w-8 { width: 2rem; } .h-8 { height: 2rem; }
-        .w-10 { width: 2.5rem; } .h-10 { height: 2.5rem; }
-        .w-12 { width: 3rem; } .h-12 { height: 3rem; }
-        .w-16 { width: 4rem; } .h-16 { height: 4rem; }
-        .w-20 { width: 5rem; } .h-20 { height: 5rem; }
-        .w-24 { width: 6rem; } .h-24 { height: 6rem; }
-        .w-28 { width: 7rem; } .h-28 { height: 7rem; }
-        .w-32 { width: 8rem; } .h-32 { height: 8rem; }
-
-        /* Enhanced background gradients */
-        .bg-gradient-primary {
-            background: linear-gradient(135deg, rgba(240, 253, 244, 0.95), rgba(255, 255, 255, 0.9));
-        }
-
-        .dark .bg-gradient-primary {
-            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(12, 17, 26, 0.98));
-        }
-
-        /* Feature card hover effects */
-        .feature-card {
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s;
-        }
-
-        .feature-card:hover::before {
-            transform: translateX(100%);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-3px);
-        }
-
-        /* Subtle text gradients */
-        .text-gradient-primary {
-            background: linear-gradient(90deg, #15803d, #16a34a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .dark .text-gradient-primary {
-            background: linear-gradient(90deg, #4ade80, #6ee7b7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-
-        /* Custom slide number indicator */
-        .slide-number {
-            position: fixed;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.75rem;
-            font-weight: 500; /* Added */
-            color: #6b7280;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            z-index: 50;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(2px); /* Added */
-            -webkit-backdrop-filter: blur(2px); /* Added */
-        }
-
-        .dark .slide-number {
-            color: #9ca3af;
-            background-color: rgba(31, 41, 55, 0.8);
-        }
-
-        /* Icon cluster visual effect */
-        .icon-cluster {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            min-height: 200px;
-        }
-
-        .floating-icon {
-            position: absolute;
-            animation-name: float;
-            animation-duration: 3s; /* Slower float */
-            animation-timing-function: ease-in-out;
-            animation-iteration-count: infinite;
-            filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
-        }
-
-        .dark .floating-icon {
-            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
-        }
-
-        .icon-delay-1 { animation-delay: 0s; animation-duration: 3.5s; }
-        .icon-delay-2 { animation-delay: 0.5s; animation-duration: 4s; }
-        .icon-delay-3 { animation-delay: 1s; animation-duration: 3s; }
-        .icon-delay-4 { animation-delay: 1.5s; animation-duration: 4.5s; }
-        .icon-delay-5 { animation-delay: 2s; animation-duration: 3.2s; }
-
+        .hover-card { transition: all 0.3s ease; }
+        .hover-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .dark .hover-card:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1); }
+        i[data-lucide] { display: inline-block; line-height: 1; }
+        .w-4 { width: 1rem; } .h-4 { height: 1rem; } .w-5 { width: 1.25rem; } .h-5 { height: 1.25rem; } .w-6 { width: 1.5rem; } .h-6 { height: 1.5rem; } .w-8 { width: 2rem; } .h-8 { height: 2rem; } .w-10 { width: 2.5rem; } .h-10 { height: 2.5rem; } .w-12 { width: 3rem; } .h-12 { height: 3rem; } .w-16 { width: 4rem; } .h-16 { height: 4rem; } .w-20 { width: 5rem; } .h-20 { height: 5rem; } .w-24 { width: 6rem; } .h-24 { height: 6rem; }
+        .bg-gradient-primary { background: linear-gradient(135deg, rgba(240, 253, 244, 0.95), rgba(255, 255, 255, 0.9)); }
+        .dark .bg-gradient-primary { background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(12, 17, 26, 0.98)); }
+        .text-gradient-primary { background: linear-gradient(90deg, #15803d, #16a34a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; }
+        .dark .text-gradient-primary { background: linear-gradient(90deg, #4ade80, #6ee7b7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; }
+        .slide-number { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 500; color: #6b7280; background-color: rgba(255, 255, 255, 0.8); padding: 0.25rem 0.75rem; border-radius: 9999px; z-index: 50; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
+        .dark .slide-number { color: #9ca3af; background-color: rgba(31, 41, 55, 0.8); }
+        .placeholder { font-family: monospace; background-color: rgba(251, 191, 36, 0.2); color: #b45309; padding: 0.1rem 0.4rem; border-radius: 0.25rem; font-size: 0.9em; border: 1px dashed rgba(217, 119, 6, 0.3); display: inline-block; }
+        .dark .placeholder { background-color: rgba(146, 64, 14, 0.3); color: #fcd34d; border-color: rgba(146, 64, 14, 0.5); }
+        .source-text { font-size: 0.75rem; color: #6b7280; margin-top: 0.1rem; font-style: italic; display: block; line-height: 1.2; }
+        .dark .source-text { color: #9ca3af; }
+        .team-list li { margin-bottom: 0.625rem; }
+        .team-list strong { font-weight: 600; color: #111827; }
+        .dark .team-list strong { color: #f9fafb; }
+        .team-list span { color: #4b5563; }
+        .dark .team-list span { color: #d1d5db; }
+        .center-content { display: flex; flex-direction: column; align-items: center; text-align: center; }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans antialiased relative min-h-screen">
@@ -434,345 +105,302 @@
     <!-- Presentation Container -->
     <div id="presentation-container" class="relative w-full h-screen overflow-hidden">
 
-        <!-- Slide 1: Title -->
+        <!-- Slide 1: Cover (ID: slide-1) -->
         <div id="slide-1" class="slide active bg-gradient-to-br from-primary-50/80 dark:from-gray-900/70 to-white dark:to-gray-950">
             <div class="slide-content text-center animate-fade-in flex flex-col items-center">
-                <div class="bg-white/40 dark:bg-gray-800/30 p-8 md:p-12 rounded-3xl backdrop-blur-sm shadow-xl w-full max-w-4xl">
-                    <i data-lucide="bus" class="inline-block w-24 h-24 mx-auto mb-6 text-primary-600 dark:text-primary-400 animate-float"></i>
-                    <h1 class="text-6xl md:text-7xl font-extrabold mb-6 text-gradient-primary tracking-tight font-display">Njem BRT</h1>
-                    <p class="text-2xl md:text-3xl font-medium mb-8 text-gray-700 dark:text-gray-300 font-display">Digitizing Enugu's Journey</p>
-                    <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        Seamless Routes, Effortless Tickets: Powering Enugu's New BRT System
+                <div class="bg-white/40 dark:bg-gray-800/30 p-8 md:p-12 rounded-3xl backdrop-blur-sm shadow-xl w-full max-w-3xl">
+                    <div class="text-6xl mb-6 animate-float">🚌</div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800 dark:text-white font-display">Njem</h1>
+                    <p class="text-xl md:text-2xl font-medium mb-8 text-gray-700 dark:text-gray-300 font-display">Unifying Enugu’s Mobility, Powering Nigeria’s Smart Transport Future.</p>
+                    <p class="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                       Website: <code>njem-brt.onrender.com</code>
                     </p>
+                    <div class="mt-6 text-sm text-gray-500 dark:text-gray-500 space-y-1">
+                       <p class="mt-4 font-semibold tracking-wider">by Team Kaizen</p>
+                    </div>
                 </div>
-                <p class="mt-12 text-sm text-gray-500 dark:text-gray-500 font-semibold tracking-wider">ETF Hackathon - Team Kaizen</p>
             </div>
         </div>
 
-        <!-- Slide 2: The Problem -->
+        <!-- Slide 2: Problem (ID: slide-2) -->
         <div id="slide-2" class="slide">
-            <div class="slide-content animate-fade-in grid md:grid-cols-2 gap-16 items-center">
-                <div class="space-y-8">
-                    <span class="inline-block px-4 py-1.5 text-sm font-semibold bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-200 rounded-full shadow-sm">The Challenge</span>
-                    <h2 class="text-3xl md:text-5xl font-bold text-gray-800 dark:text-white leading-tight font-display">Enugu Launches BRT, Faces Operational Hurdles</h2>
-                    <ul class="list-none space-y-4 text-gray-700 dark:text-gray-300 feature-list">
-                        <li class="animate-slide-in-left delay-100 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all">
-                            <i data-lucide="bus" class="icon-primary w-6 h-6"></i>
-                            <span>Enugu State acquires <strong class="font-semibold text-primary-600 dark:text-primary-400">50 new BRT buses</strong> – a major step forward!</span>
-                        </li>
-                        <li class="animate-slide-in-left delay-200 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all">
-                            <i data-lucide="puzzle" class="icon-neutral w-6 h-6"></i>
-                            <span>Launching manually is complex: inefficient ticketing, unclear routes, data gaps.</span>
-                        </li>
-                        <li class="animate-slide-in-left delay-300 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all">
-                            <i data-lucide="users" class="icon-secondary w-6 h-6"></i>
-                            <span>Passenger Pain Points: Long queues, journey uncertainty, cash reliance, planning difficulties.</span>
-                        </li>
-                        <li class="animate-slide-in-left delay-400 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all">
-                            <i data-lucide="alert-triangle" class="icon-warning w-6 h-6"></i>
-                            <span>Risk of revenue leakage and a sub-optimal start for a crucial service.</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex items-center justify-center p-8 bg-gray-100/80 dark:bg-gray-800/40 rounded-3xl shadow-inner min-h-[350px] backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30">
-                    <div class="icon-cluster relative w-64 h-64">
-                        <i data-lucide="route-off" class="absolute top-0 left-0 w-28 h-28 text-red-400 dark:text-red-500 opacity-70 -rotate-12 floating-icon icon-delay-1"></i>
-                        <i data-lucide="clock" class="absolute bottom-0 right-0 w-24 h-24 text-orange-400 dark:text-orange-500 opacity-70 rotate-12 floating-icon icon-delay-2"></i>
-                        <i data-lucide="wallet" class="absolute top-1/3 right-0 w-20 h-20 text-yellow-500 dark:text-yellow-600 opacity-70 floating-icon icon-delay-3"></i>
-                        <i data-lucide="ban" class="absolute bottom-10 left-4 w-20 h-20 text-gray-400 dark:text-gray-500 opacity-60 floating-icon icon-delay-4"></i>
-                        <i data-lucide="loader" class="absolute top-1/2 left-1/3 w-16 h-16 text-gray-300 dark:text-gray-600 opacity-40 floating-icon icon-delay-5"></i>
-                    </div>
-                </div>
+            <div class="slide-content animate-fade-in max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-800 dark:text-white font-display center-content">The Problem: Enugu’s Mobility Paradox</h2>
+                 <ul class="list-none space-y-5 text-lg text-gray-700 dark:text-gray-300 bullet-list">
+                     <li class="animate-slide-in-up delay-100"><i data-lucide="puzzle" class="icon-danger"></i><span><strong class="font-semibold">Fragmentation:</strong> Road transport (>90% GDP share) operates in silos (BRT, Keke, Taxi). <span class="source-text">(Source: NTSS)</span></span></li>
+                     <li class="animate-slide-in-up delay-200"><i data-lucide="sliders-horizontal" class="icon-warning"></i><span><strong class="font-semibold">Inefficiency:</strong> New infra underutilized; long waits, unpredictable travel.</span></li>
+                     <li class="animate-slide-in-up delay-300"><i data-lucide="eye-off" class="icon-neutral"></i><span><strong class="font-semibold">Info Asymmetry:</strong> Lack of reliable real-time info (ETAs, fares - e.g., Avg City Bus ₦908). <span class="source-text">(Source: NTSS)</span></span></li>
+                     <li class="animate-slide-in-up delay-400"><i data-lucide="activity" class="icon-danger"></i><span><strong class="font-semibold">Economic Drain:</strong> Lost productivity, operator income, high fuel use, safety concerns. <span class="source-text">(Source: NTSS - Challenges)</span></span></li>
+                     <li class="animate-slide-in-up delay-500"><i data-lucide="database-zap" class="icon-warning"></i><span><strong class="font-semibold">Data Black Hole:</strong> No unified data for optimization or future planning.</span></li>
+                 </ul>
             </div>
         </div>
 
-        <!-- Slide 3: The Opportunity -->
-        <div id="slide-3" class="slide bg-gradient-to-tr from-green-50/90 dark:from-gray-950 to-blue-50/90 dark:to-gray-900">
-            <div class="slide-content animate-fade-in text-center">
-                <span class="inline-block px-4 py-1.5 text-sm font-semibold bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-200 rounded-full shadow-sm mb-6">The Opportunity</span>
-                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-800 dark:text-white leading-tight font-display">A Digital Foundation for Modern Transit</h2>
-                <div class="max-w-3xl mx-auto p-6 bg-white/60 dark:bg-gray-800/40 rounded-2xl shadow-md backdrop-blur-sm mb-12">
-                    <p class="text-xl text-gray-700 dark:text-gray-300">
-                        Government investment creates the perfect moment. We need a seamless, tech-driven experience
-                        <strong class="text-primary-600 dark:text-primary-400">from day one</strong> to ensure the BRT's success.
-                    </p>
-                </div>
-                <div class="flex flex-wrap justify-center items-center gap-4 md:gap-8">
-                    <div class="text-center p-3 animate-slide-in-up delay-100">
-                        <i data-lucide="building" class="w-20 h-20 text-gray-400 dark:text-gray-600 opacity-80"></i>
-                        <p class="mt-2 font-medium">Current State</p>
-                    </div>
-                    <i data-lucide="arrow-right" class="w-12 h-12 text-primary-500 dark:text-primary-400 opacity-70"></i>
-                    <div class="text-center p-3 animate-slide-in-up delay-300">
-                        <i data-lucide="sparkles" class="w-28 h-28 text-accent-500 dark:text-accent-400 animate-pulse-slow"></i>
-                        <p class="mt-2 font-medium">Transformation</p>
-                    </div>
-                    <i data-lucide="arrow-right" class="w-12 h-12 text-primary-500 dark:text-primary-400 opacity-70"></i>
-                    <div class="text-center p-3 animate-slide-in-up delay-500">
-                        <i data-lucide="smartphone-charging" class="w-20 h-20 text-secondary-500 dark:text-secondary-400 opacity-80"></i>
-                        <p class="mt-2 font-medium">Digital Future</p>
-                    </div>
-                </div>
-                <p class="mt-12 text-2xl font-medium text-gray-800 dark:text-white">Let's build efficiency and data into the system's core.</p>
+        <!-- Slide 3: Solution (ID: slide-3) -->
+        <div id="slide-3" class="slide bg-gradient-primary">
+            <div class="slide-content animate-fade-in max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-800 dark:text-white font-display center-content">Our Solution: The Intelligent Integration Layer</h2>
+                 <ul class="list-none space-y-5 text-lg text-gray-700 dark:text-gray-300 bullet-list">
+                    <li class="animate-slide-in-up delay-100"><i data-lucide="smartphone-nfc" class="icon-primary"></i><span><strong class="font-semibold">Unified Platform:</strong> One app for planning, booking, paying (BRT, Keke, Taxi).</span></li>
+                    <li class="animate-slide-in-up delay-200"><i data-lucide="route" class="icon-secondary"></i><span><strong class="font-semibold">Hyper-Accurate Routing:</strong> AI engine + <strong class="text-secondary-600 dark:text-secondary-400">AI ETA</strong>, refined by paid local driver consultants.</span></li>
+                    <li class="animate-slide-in-up delay-300"><i data-lucide="check-shield" class="icon-accent"></i><span><strong class="font-semibold">Seamless Experience:</strong> Real-time tracking (soon), transparent fares, secure payments (Paystack), driver verification/ratings.</span></li>
+                    <li class="animate-slide-in-up delay-400"><i data-lucide="coins" class="icon-primary"></i><span><strong class="font-semibold">Engaging Loyalty:</strong> AI-personalized challenges reward users with NJEM Blockchain tokens.</span></li>
+                    <li class="animate-slide-in-up delay-500"><i data-lucide="user-cog" class="icon-secondary"></i><span><strong class="font-semibold">Operator Empowerment:</strong> Efficient routing, more passengers, digital payments, platform input.</span></li>
+                </ul>
             </div>
         </div>
 
-        <!-- Slide 4: Our Solution -->
+        <!-- Slide 4: Unique Edge (ID: slide-4) -->
         <div id="slide-4" class="slide">
-            <div class="slide-content animate-fade-in">
-                <div class="flex flex-col items-center mb-12">
-                    <span class="inline-block px-4 py-1.5 text-sm font-semibold bg-primary-100 text-primary-800 dark:bg-primary-900/50 dark:text-primary-200 rounded-full shadow-sm mb-4">Our Solution</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-primary-600 dark:text-primary-400 text-center font-display">Njem BRT</h2>
-                    <div class="h-1 w-24 bg-primary-500 dark:bg-primary-400 rounded-full mt-4 mb-8"></div>
-                    <p class="text-center text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-                        Your digital co-pilot for the Enugu BRT. A comprehensive Django web platform designed for both <strong class="text-secondary-600 dark:text-secondary-400">passengers</strong> and <strong class="text-accent-600 dark:text-accent-400">operators</strong>.
-                    </p>
-                </div>
-                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                     <div class="p-6 bg-primary-50 dark:bg-primary-900/30 rounded-xl shadow-lg border border-primary-200 dark:border-primary-800/50 animate-slide-in-up delay-100 hover-card feature-card">
-                         <i data-lucide="map-pin" class="w-12 h-12 icon-primary mx-auto"></i>
-                         <h3 class="font-semibold text-lg text-gray-800 dark:text-white mt-4 font-display">Route Planning</h3>
-                         <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Easy discovery & visualization</p>
-                     </div>
-                     <div class="p-6 bg-secondary-50 dark:bg-secondary-900/30 rounded-xl shadow-lg border border-secondary-200 dark:border-secondary-800/50 animate-slide-in-up delay-200 hover-card feature-card">
-                         <i data-lucide="credit-card" class="w-12 h-12 icon-secondary mx-auto"></i>
-                         <h3 class="font-semibold text-lg text-gray-800 dark:text-white mt-4 font-display">Digital Ticketing</h3>
-                         <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Secure Paystack payments</p>
-                     </div>
-                     <div class="p-6 bg-accent-50 dark:bg-accent-900/30 rounded-xl shadow-lg border border-accent-200 dark:border-accent-800/50 animate-slide-in-up delay-300 hover-card feature-card">
-                          <i data-lucide="user-cog" class="w-12 h-12 icon-accent mx-auto"></i>
-                         <h3 class="font-semibold text-lg text-gray-800 dark:text-white mt-4 font-display">User Management</h3>
-                         <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Profiles & ticket history</p>
-                     </div>
-                     <div class="p-6 bg-gray-100 dark:bg-gray-800/50 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700/50 animate-slide-in-up delay-400 hover-card feature-card">
-                         <i data-lucide="layout-dashboard" class="w-12 h-12 icon-neutral mx-auto"></i>
-                         <h3 class="font-semibold text-lg text-gray-800 dark:text-white mt-4 font-display">Admin Oversight</h3>
-                         <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Monitoring & data tools</p>
-                     </div>
-                 </div>
-                 <div class="mt-16 flex justify-center opacity-50 animate-fade-in delay-500">
-                      <i data-lucide="laptop" class="w-24 h-24 text-gray-400 dark:text-gray-500"></i>
-                 </div>
-            </div>
-        </div>
+             <div class="slide-content animate-fade-in max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-800 dark:text-white font-display center-content">Njem Enugu's Unique Edge</h2>
+                <ul class="list-none space-y-5 text-lg text-gray-700 dark:text-gray-300 bullet-list">
+                    <li class="animate-slide-in-up delay-100"><i data-lucide="network" class="icon-success"></i><span><strong class="font-semibold">True Multi-Modal:</strong> Built for seamless integration (BRT, Keke, Taxi) from the start.</span></li>
+                    <li class="animate-slide-in-up delay-200"><i data-lucide="map-pin" class="icon-primary"></i><span><strong class="font-semibold">Hyper-Local Accuracy:</strong> Formalized <strong class="text-primary-600 dark:text-primary-400"> collaboration</strong> with local drivers ensures ground-truth.</span></li>
+                    <li class="animate-slide-in-up delay-300"><i data-lucide="cpu" class="icon-secondary"></i><span><strong class="font-semibold">AI + Blockchain:</strong> Personalized experience and engaging, secure NJEM Token loyalty.</span></li>
+                    <li class="animate-slide-in-up delay-400"><i data-lucide="building" class="icon-accent"></i><span><strong class="font-semibold">Government Alignment:</strong> Designed to leverage and enhance current infrastructure investments (BRT).</span></li>
+                    <li class="animate-slide-in-up delay-500"><i data-lucide="scaling" class="icon-success"></i><span><strong class="font-semibold">Designed for Scale:</strong> Model and technology built for national replication.</span></li>
+                 </ul>
+             </div>
+         </div>
 
-        <!-- Slide 5: Features - Passenger -->
+        <!-- Slide 5: How it Works (Original Slide 5) (ID: slide-5) -->
         <div id="slide-5" class="slide">
-             <div class="slide-content animate-fade-in grid md:grid-cols-2 gap-16 items-center">
-                 <div class="space-y-8">
-                    <h2 class="text-3xl md:text-5xl font-bold text-secondary-600 dark:text-secondary-400 leading-tight font-display">Passenger Power: Making the Journey Easy</h2>
-                     <ul class="list-none space-y-4 text-gray-700 dark:text-gray-300 feature-list">
-                        <li class="animate-slide-in-left delay-100 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all"><i data-lucide="route" class="icon-primary w-6 h-6"></i><span><strong>Smart Route Planning:</strong> Find optimal routes (min. stops/transfers) with clear map view.</span></li>
-                        <li class="animate-slide-in-left delay-200 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all"><i data-lucide="locate-fixed" class="icon-accent w-6 h-6"></i><span><strong>Nearest Stop Finder:</strong> Instantly locate your closest BRT stop via geolocation.</span></li>
-                        <li class="animate-slide-in-left delay-300 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all"><i data-lucide="smartphone" class="icon-secondary w-6 h-6"></i><span><strong>Seamless Paystack Ticketing:</strong> Buy tickets online securely, anytime, anywhere.</span></li>
-                        <li class="animate-slide-in-left delay-400 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all"><i data-lucide="qr-code" class="icon-neutral w-6 h-6"></i><span><strong>My Tickets & QR Code:</strong> Access valid tickets & unique QR codes for easy boarding validation.</span></li>
-                        <li class="animate-slide-in-left delay-500 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all"><i data-lucide="list" class="icon-primary w-6 h-6"></i><span><strong>Route Directory:</strong> Explore all available routes and stops visually.</span></li>
-                    </ul>
-                </div>
-                 <div class="flex flex-col items-center justify-center space-y-8 p-10 bg-gray-100/80 dark:bg-gray-800/40 rounded-3xl shadow-inner min-h-[450px] backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 animate-slide-in-right delay-200">
-                    <i data-lucide="map-pin" class="w-24 h-24 text-primary-500 dark:text-primary-400 animate-float icon-delay-1"></i>
-                    <i data-lucide="arrow-down" class="w-12 h-12 text-gray-400 dark:text-gray-500 opacity-60"></i>
-                    <i data-lucide="ticket" class="w-24 h-24 text-secondary-500 dark:text-secondary-400 animate-float icon-delay-3"></i>
-                     <i data-lucide="smartphone-nfc" class="w-20 h-20 text-accent-500 dark:text-accent-400 mt-4 animate-float icon-delay-2"></i>
-                 </div>
-            </div>
-        </div>
-
-        <!-- Slide 6: Features - Admin -->
-        <div id="slide-6" class="slide">
-            <div class="slide-content animate-fade-in grid md:grid-cols-2 gap-16 items-center">
-                <div class="flex flex-col items-center justify-center space-y-8 p-10 bg-gray-100/80 dark:bg-gray-800/40 rounded-3xl shadow-inner min-h-[450px] backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/30 md:order-last animate-slide-in-right delay-200">
-                    <i data-lucide="sliders-horizontal" class="w-24 h-24 text-accent-500 dark:text-accent-400 animate-float icon-delay-1"></i>
-                    <div class="flex space-x-8 items-center">
-                        <i data-lucide="database" class="w-20 h-20 text-secondary-500 dark:text-secondary-400 animate-float icon-delay-3"></i>
-                        <i data-lucide="user-check" class="w-24 h-24 text-primary-500 dark:text-primary-400 animate-float icon-delay-2"></i>
-                    </div>
-                    <i data-lucide="clipboard-list" class="w-20 h-20 text-gray-500 dark:text-gray-400 mt-4 animate-float icon-delay-4"></i>
-                 </div>
-                 <div class="space-y-8 md:order-first">
-                    <h2 class="text-3xl md:text-5xl font-bold text-accent-600 dark:text-accent-400 leading-tight font-display">Admin Control: Empowering Efficient Operations</h2>
-                    <ul class="list-none space-y-4 text-gray-700 dark:text-gray-300 feature-list">
-                        <li class="animate-slide-in-left delay-100 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all"><i data-lucide="bar-chart-3" class="icon-accent w-6 h-6"></i><span><strong>Admin Dashboard:</strong> At-a-glance view of key system metrics (stops, routes, tickets).</span></li>
-                        <li class="animate-slide-in-left delay-200 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all"><i data-lucide="database" class="icon-neutral w-6 h-6"></i><span><strong>Full Admin Panel:</strong> Manage routes, stops, fares, users, and announcements via Django Admin.</span></li>
-                        <li class="animate-slide-in-left delay-300 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all"><i data-lucide="check-check" class="icon-success w-6 h-6"></i><span><strong>Ticket Verification API:</strong> Endpoints ready for validating tickets via reference or QR value.</span></li>
-                        <li class="animate-slide-in-left delay-400 p-2 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all"><i data-lucide="folder-output" class="icon-secondary w-6 h-6"></i><span><strong>Easy Data Management:</strong> Simple commands for initial data loading and fare setup.</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 7: Demo -->
-        <div id="slide-7" class="slide bg-gradient-to-b from-gray-900 to-gray-950">
-            <div class="slide-content text-center animate-fade-in">
-                <i data-lucide="play-circle" class="w-24 h-24 mx-auto mb-8 text-primary-400 animate-pulse-slow"></i>
-                <h2 class="text-5xl md:text-6xl font-bold mb-6 text-white font-display">Demo Time! <span class="inline-block animate-float delay-300">🚀</span></h2>
-                <p class="text-xl text-gray-300 mb-10">Let's see Njem BRT in action.</p>
-                 <div class="text-lg text-gray-400 space-y-4 max-w-xl mx-auto text-left px-4 feature-list bg-gray-800/30 p-6 rounded-xl backdrop-blur-sm border border-gray-700/50">
-                     <li class="animate-slide-in-up delay-100"><i data-lucide="map-pin" class="icon-primary w-5 h-5"></i><span>Plan a route (e.g., Holy Ghost → IMT)</span></li>
-                     <li class="animate-slide-in-up delay-200"><i data-lucide="list-ordered" class="icon-secondary w-5 h-5"></i><span>Show itinerary & map results</span></li>
-                     <li class="animate-slide-in-up delay-300"><i data-lucide="credit-card" class="icon-accent w-5 h-5"></i><span>Initiate ticket purchase (show modal)</span></li>
-                     <li class="animate-slide-in-up delay-500"><i data-lucide="layout-dashboard" class="icon-warning w-5 h-5"></i><span>Briefly showcase Admin Dashboard</span></li>
-                 </div>
-            </div>
-        </div>
-
-        <!-- Slide 8: Tech Stack -->
-        <div id="slide-8" class="slide">
-            <div class="slide-content animate-fade-in">
-                <h2 class="text-center text-3xl md:text-5xl font-bold mb-16 text-gray-800 dark:text-white font-display">Built with Robust & Scalable Tech</h2>
-                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 max-w-5xl mx-auto icon-grid-center">
-                    
-                    <div class="animate-slide-in-up delay-100"><i data-lucide="code" class="w-16 h-16 icon-secondary"></i><span class="block font-medium text-sm mt-2">Python</span></div>
-                    <div class="animate-slide-in-up delay-100"><i data-lucide="layers" class="w-16 h-16 icon-primary"></i><span class="block font-medium text-sm mt-2">Django</span></div>
-                    <div class="animate-slide-in-up delay-200"><i data-lucide="wind" class="w-16 h-16 icon-secondary"></i><span class="block font-medium text-sm mt-2">Tailwind CSS</span></div>
-                    <div class="animate-slide-in-up delay-200"><i data-lucide="component" class="w-16 h-16 icon-neutral"></i><span class="block font-medium text-sm mt-2">Flowbite</span></div>
-                    <div class="animate-slide-in-up delay-300"><i data-lucide="file-json" class="w-16 h-16 icon-accent"></i><span class="block font-medium text-sm mt-2">JavaScript</span></div>
-                    <div class="animate-slide-in-up delay-300"><i data-lucide="map" class="w-16 h-16 icon-primary"></i><span class="block font-medium text-sm mt-2">Leaflet.js</span></div>
-                    <div class="animate-slide-in-up delay-400"><i data-lucide="credit-card" class="w-16 h-16 icon-success"></i><span class="block font-medium text-sm mt-2">Paystack</span></div>
-                    <div class="animate-slide-in-up delay-400"><i data-lucide="database" class="w-16 h-16 icon-secondary"></i><span class="block font-medium text-sm mt-2">SQLite</span></div>
-                    <div class="animate-slide-in-up delay-500"><i data-lucide="flask-conical" class="w-16 h-16 icon-neutral"></i><span class="block font-medium text-sm mt-2">SciPy</span></div>
-                    <div class="animate-slide-in-up delay-500"><i data-lucide="calculator" class="w-16 h-16 icon-primary"></i><span class="block font-medium text-sm mt-2">NumPy</span></div>
-                 </div>
-                 <p class="text-center mt-12 text-lg text-gray-600 dark:text-gray-400">Leveraging proven technologies for reliability and speed.</p>
-            </div>
-        </div>
-
-        <!-- Slide 9: Impact -->
-        <div id="slide-9" class="slide bg-gradient-to-tl from-primary-50/90 dark:from-gray-900/80 to-accent-50/90 dark:to-gray-950">
-            <div class="slide-content animate-fade-in">
-                <h2 class="text-center text-3xl md:text-5xl font-bold mb-16 text-gray-800 dark:text-white font-display">Why Njem BRT? Value Delivered</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-8 border-l-4 border-secondary-500 bg-white dark:bg-gray-800/70 rounded-r-lg shadow-xl hover-card animate-slide-in-up delay-100 backdrop-blur-sm">
-                        <h3 class="text-xl font-semibold mb-4 text-secondary-700 dark:text-secondary-300 flex items-center font-display"><i data-lucide="smile" class="w-6 h-6 mr-2"></i> For Passengers</h3>
-                        <ul class="list-none space-y-2 text-sm text-gray-700 dark:text-gray-300 feature-list">
-                            <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Ultimate Convenience</span></li>
-                            <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Real-time Info Access</span></li>
-                            <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Secure Cashless Payments</span></li>
-                            <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Increased Confidence</span></li>
-                        </ul>
-                    </div>
-                     <div class="p-8 border-l-4 border-accent-500 bg-white dark:bg-gray-800/70 rounded-r-lg shadow-xl hover-card animate-slide-in-up delay-200 backdrop-blur-sm">
-                        <h3 class="text-xl font-semibold mb-4 text-accent-700 dark:text-accent-300 flex items-center font-display"><i data-lucide="briefcase" class="w-6 h-6 mr-2"></i> For Govt/Operator</h3>
-                        <ul class="list-none space-y-2 text-sm text-gray-700 dark:text-gray-300 feature-list">
-                            <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Operational Efficiency</span></li>
-                            <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Valuable Data Insights</span></li>
-                            <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Reduced Revenue Leakage</span></li>
-                            <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Modern Service Image</span></li>
-                        </ul>
-                    </div>
-                     <div class="p-8 border-l-4 border-primary-500 bg-white dark:bg-gray-800/70 rounded-r-lg shadow-xl hover-card animate-slide-in-up delay-300 backdrop-blur-sm">
-                        <h3 class="text-xl font-semibold mb-4 text-primary-700 dark:text-primary-300 flex items-center font-display"><i data-lucide="building-2" class="w-6 h-6 mr-2"></i> For Enugu</h3>
-                        <ul class="list-none space-y-2 text-sm text-gray-700 dark:text-gray-300 feature-list">
-                             <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Smoother City Transit</span></li>
-                             <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Enhanced Tech Adoption</span></li>
-                             <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Improved Urban Mobility</span></li>
-                             <li><i data-lucide="check-circle-2" class="icon-success w-4 h-4"></i><span>Foundation for Growth</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 10: Roadmap -->
-        <div id="slide-10" class="slide">
-            <div class="slide-content animate-fade-in">
-                <h2 class="text-center text-3xl md:text-5xl font-bold mb-16 text-gray-800 dark:text-white font-display">Future Roadmap: Beyond the MVP</h2>
-                 <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
-                    <div class="flex items-start space-x-4 animate-slide-in-up delay-100 p-3 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all">
-                        <i data-lucide="map-pin" class="w-8 h-8 icon-primary flex-shrink-0 mt-1"></i>
-                        <div><h4 class="font-semibold text-lg mb-1 text-gray-800 dark:text-white font-display">Real-time Tracking</h4><p class="text-sm text-gray-600 dark:text-gray-400">Live bus locations & ETAs.</p></div>
-                    </div>
-                     <div class="flex items-start space-x-4 animate-slide-in-up delay-100 p-3 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all">
-                        <i data-lucide="wallet" class="w-8 h-8 icon-secondary flex-shrink-0 mt-1"></i>
-                        <div><h4 class="font-semibold text-lg mb-1 text-gray-800 dark:text-white font-display">Wallet System</h4><p class="text-sm text-gray-600 dark:text-gray-400">Faster in-app payments.</p></div>
-                    </div>
-                     <div class="flex items-start space-x-4 animate-slide-in-up delay-200 p-3 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all">
-                        <i data-lucide="line-chart" class="w-8 h-8 icon-accent flex-shrink-0 mt-1"></i>
-                        <div><h4 class="font-semibold text-lg mb-1 text-gray-800 dark:text-white font-display">Advanced Analytics</h4><p class="text-sm text-gray-600 dark:text-gray-400">Ridership & performance data.</p></div>
-                    </div>
-                     <div class="flex items-start space-x-4 animate-slide-in-up delay-200 p-3 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all">
-                         <i data-lucide="smartphone" class="w-8 h-8 icon-primary flex-shrink-0 mt-1"></i>
-                        <div><h4 class="font-semibold text-lg mb-1 text-gray-800 dark:text-white font-display">Mobile App</h4><p class="text-sm text-gray-600 dark:text-gray-400">Native iOS & Android experience.</p></div>
-                    </div>
-                     <div class="flex items-start space-x-4 animate-slide-in-up delay-300 p-3 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all">
-                        <i data-lucide="bell" class="w-8 h-8 icon-secondary flex-shrink-0 mt-1"></i>
-                        <div><h4 class="font-semibold text-lg mb-1 text-gray-800 dark:text-white font-display">Notifications</h4><p class="text-sm text-gray-600 dark:text-gray-400">Trip alerts & updates.</p></div>
-                    </div>
-                    <div class="flex items-start space-x-4 animate-slide-in-up delay-300 p-3 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/30 transition-all">
-                        <i data-lucide="award" class="w-8 h-8 icon-accent flex-shrink-0 mt-1"></i>
-                        <div><h4 class="font-semibold text-lg mb-1 text-gray-800 dark:text-white font-display">Loyalty Program</h4><p class="text-sm text-gray-600 dark:text-gray-400">Reward frequent riders.</p></div>
-                    </div>
-                 </div>
-                 <p class="text-center mt-16 text-lg text-gray-500 dark:text-gray-400">Building a comprehensive and future-proof platform.</p>
-            </div>
-        </div>
-
-        <!-- Slide 11: Team (Optional) -->
-        <div id="slide-11" class="slide">
-            <div class="slide-content animate-fade-in text-center">
-                <h2 class="text-3xl md:text-5xl font-bold mb-16 text-gray-800 dark:text-white font-display">Meet the Njem BRT Team</h2>
-                 <div class="flex flex-wrap justify-center gap-12">
-                     <div class="text-center animate-slide-in-up delay-200">
-                          <div class="relative inline-block mb-4 group">
-                             <i data-lucide="circle-user-round" class="w-32 h-32 text-primary-500 dark:text-primary-400 inline-block align-middle transition-transform duration-300 group-hover:scale-105"></i>
-                             <span class="absolute bottom-1 right-1 p-2 bg-white dark:bg-gray-800 rounded-full text-secondary-600 dark:text-secondary-400 shadow-lg transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
-                                 <i data-lucide="figma" class="w-7 h-7 inline-flex items-center justify-center"></i>
-                             </span>
-                         </div>
-                         <h4 class="font-semibold text-xl text-gray-800 dark:text-white font-display">Nwobodo Somtochukwu</h4>
-                         <p class="text-sm font-medium text-primary-600 dark:text-primary-400">Product Designer</p>
+            <div class="slide-content animate-fade-in max-w-4xl">
+                 <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-800 dark:text-white font-display center-content">How it Works: Simple, Seamless, Smart</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                     <div class="p-4 bg-gray-100 dark:bg-gray-800/40 rounded-lg shadow animate-slide-in-up delay-100 hover-card">
+                         <i data-lucide="map" class="w-10 h-10 icon-primary mx-auto mb-3"></i>
+                         <h3 class="font-semibold text-lg mb-1">1. Plan</h3>
+                         <p class="text-sm text-gray-600 dark:text-gray-400">Enter destination -> App suggests optimal multi-modal routes (BRT+Keke) + AI ETA.</p>
                      </div>
-                     <div class="text-center animate-slide-in-up delay-200">
-                        <div class="relative inline-block mb-4 group">
-                           <i data-lucide="circle-user-round" class="w-32 h-32 text-primary-500 dark:text-primary-400 inline-block align-middle transition-transform duration-300 group-hover:scale-105"></i>
-                           <span class="absolute bottom-1 right-1 p-2 bg-white dark:bg-gray-800 rounded-full text-secondary-600 dark:text-secondary-400 shadow-lg transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
-                               <i data-lucide="code" class="w-7 h-7 inline-flex items-center justify-center"></i>
-                           </span>
-                       </div>
-                       <h4 class="font-semibold text-xl text-gray-800 dark:text-white font-display">Ojini Godspower</h4>
-                       <p class="text-sm font-medium text-primary-600 dark:text-primary-400">Frontend Developer</p>
-                   </div>
-                   <div class="text-center animate-slide-in-up delay-200">
-                    <div class="relative inline-block mb-4 group">
-                       <i data-lucide="circle-user-round" class="w-32 h-32 text-primary-500 dark:text-primary-400 inline-block align-middle transition-transform duration-300 group-hover:scale-105"></i>
-                       <span class="absolute bottom-1 right-1 p-2 bg-white dark:bg-gray-800 rounded-full text-secondary-600 dark:text-secondary-400 shadow-lg transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
-                           <i data-lucide="code" class="w-7 h-7 inline-flex items-center justify-center"></i>
-                       </span>
-                   </div>
-                   <h4 class="font-semibold text-xl text-gray-800 dark:text-white font-display">Nnadi Joshua</h4>
-                   <p class="text-sm font-medium text-primary-600 dark:text-primary-400">Frontend Developer</p>
-               </div>
-               <div class="text-center animate-slide-in-up delay-200">
-                <div class="relative inline-block mb-4 group">
-                   <i data-lucide="circle-user-round" class="w-32 h-32 text-primary-500 dark:text-primary-400 inline-block align-middle transition-transform duration-300 group-hover:scale-105"></i>
-                   <span class="absolute bottom-1 right-1 p-2 bg-white dark:bg-gray-800 rounded-full text-secondary-600 dark:text-secondary-400 shadow-lg transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
-                       <i data-lucide="code" class="w-7 h-7 inline-flex items-center justify-center"></i>
-                   </span>
-               </div>
-               <h4 class="font-semibold text-xl text-gray-800 dark:text-white font-display">Ibeagha Bethel</h4>
-               <p class="text-sm font-medium text-primary-600 dark:text-primary-400">Backend Developer</p>
-           </div>
+                     <div class="p-4 bg-gray-100 dark:bg-gray-800/40 rounded-lg shadow animate-slide-in-up delay-200 hover-card">
+                         <i data-lucide="credit-card" class="w-10 h-10 icon-secondary mx-auto mb-3"></i>
+                         <h3 class="font-semibold text-lg mb-1">2. Book & Pay</h3>
+                         <p class="text-sm text-gray-600 dark:text-gray-400">Select route, see fare, book Keke/Taxi or get BRT info, pay securely.</p>
+                     </div>
+                     <div class="p-4 bg-gray-100 dark:bg-gray-800/40 rounded-lg shadow animate-slide-in-up delay-300 hover-card">
+                         <i data-lucide="smartphone-charging" class="w-10 h-10 icon-accent mx-auto mb-3"></i>
+                         <h3 class="font-semibold text-lg mb-1">3. Ride & Track</h3>
+                         <p class="text-sm text-gray-600 dark:text-gray-400">Track vehicle/BRT, share trip, rate driver.</p>
+                     </div>
+                     <div class="p-4 bg-gray-100 dark:bg-gray-800/40 rounded-lg shadow animate-slide-in-up delay-400 hover-card">
+                         <i data-lucide="award" class="w-10 h-10 icon-primary mx-auto mb-3"></i>
+                         <h3 class="font-semibold text-lg mb-1">4. Earn</h3>
+                         <p class="text-sm text-gray-600 dark:text-gray-400">Trips & AI challenges earn NJEM loyalty tokens in wallet.</p>
+                     </div>
+                 </div>
+                  <!-- <div class="mt-10 text-center">
+                     <span class="text-gray-500 dark:text-gray-400 italic"> (Visual: Key App Screen Mockups Needed Here) </span>
+                 </div> -->
+            </div>
+        </div>
+
+        <!-- Slide 6: Business Model (Original Slide 6) (ID: slide-6) -->
+        <div id="slide-6" class="slide">
+             <div class="slide-content animate-fade-in max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-800 dark:text-white font-display center-content">Business Model: Multi-Stream Revenue</h2>
+                <ul class="list-none space-y-4 text-lg text-gray-700 dark:text-gray-300 bullet-list">
+                    <li class="animate-slide-in-up delay-100"><i data-lucide="percent" class="icon-primary"></i><span><strong class="font-semibold">Ride Commissions (Core):</strong> 10-20% on Keke/Taxi fares.</span></li>
+                    <li class="animate-slide-in-up delay-200"><i data-lucide="database" class="icon-secondary"></i><span><strong class="font-semibold">Data Licensing & Analytics (High Growth):</strong> Anonymized, aggregated, hyper-local data subscriptions (Govt, Biz, Research).</span></li>
+                    <li class="animate-slide-in-up delay-300"><i data-lucide="megaphone" class="icon-accent"></i><span><strong class="font-semibold">Targeted Advertising:</strong> Location-aware ads in-app.</span></li>
+                    <li class="animate-slide-in-up delay-400"><i data-lucide="handshake" class="icon-primary"></i><span><strong class="font-semibold">Partnerships:</strong> Revenue sharing from loyalty program integrations.</span></li>
+                    <li class="animate-slide-in-up delay-500"><i data-lucide="more-horizontal" class="icon-neutral"></i><span><strong class="font-semibold">(Future):</strong> API fees, Premium Subscriptions, PaaS/White-Labeling.</span></li>
+                </ul>
+                 <div class="mt-8 center-content">
+                     <p class="text-sm text-gray-600 dark:text-gray-400">Validation: 19% online sales share projected in public transport by 2029.</p>
+                     <p class="source-text">(Source: NTSS 2024-2029)</p>
                  </div>
             </div>
         </div>
 
-        <!-- Slide 12: Thank You / CTA -->
-        <div id="slide-12" class="slide bg-gradient-to-br from-primary-600 to-secondary-700 dark:from-gray-900 dark:to-gray-950">
-             <div class="slide-content animate-fade-in text-center text-white">
-                 <i data-lucide="party-popper" class="w-24 h-24 mx-auto mb-8 text-accent-300 animate-float icon-delay-2"></i>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight font-display">Let's Drive Enugu's BRT Forward!</h2>
-                <p class="text-xl text-primary-100 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
-                    Njem BRT provides the essential digital infrastructure for a successful, modern, and efficient transit system.
-                </p>
-                <!--<div class="space-y-4 mb-12">
-                    <a href="https://github.com/bethel1889/ubiquitous-octo-garbanzo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-primary-700 bg-white hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-700 focus:ring-white transition duration-300 ease-in-out transform hover:scale-105 shadow-lg">
-                       <i data-lucide="github" class="w-5 h-5 mr-2"></i> View Code on GitHub
-                    </a>
-                </div>-->
-                <p class="text-4xl font-semibold text-accent-300 font-display">Thank You!</p>
-                <p class="mt-3 text-2xl text-primary-200 dark:text-gray-400 font-display">Questions?</p>
+        <!-- Slide 7: Market Opportunity (Original Slide 7) (ID: slide-7) -->
+        <div id="slide-7" class="slide bg-gradient-to-tr from-green-50/90 dark:from-gray-950 to-blue-50/90 dark:to-gray-900">
+            <div class="slide-content animate-fade-in max-w-5xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-800 dark:text-white font-display center-content">Market Opportunity: Massive Market, Primed by Infrastructure</h2>
+                <div class="grid md:grid-cols-2 gap-10">
+                        <!-- Enugu Launchpad - Refined -->
+                    <div class="p-6 bg-white/60 dark:bg-gray-800/40 rounded-xl shadow-md backdrop-blur-sm animate-slide-in-left delay-100">
+                        <h3 class="font-semibold text-xl mb-3 flex items-center text-primary-700 dark:text-primary-300"><i data-lucide="map-pin" class="w-6 h-6 mr-2"></i>Enugu Launchpad</h3>
+                        <ul class="list-none space-y-3 text-sm text-gray-700 dark:text-gray-300 bullet-list">
+                            <li><i data-lucide="target" class="icon-success w-4 h-4"></i><span>Ideal starting point: High density, growing tech adoption.</span></li>
+                            <li><i data-lucide="zap" class="icon-warning w-4 h-4"></i><span>Perfect Timing: Aligns with *new* Govt. BRT infrastructure investment (buses, terminals).</span></li>
+                            <li><i data-lucide="users" class="icon-neutral w-4 h-4"></i><span>Addressable Market: Large base of smartphone users needing daily transport solutions.</span></li>
+                        </ul>
+                    </div>
+                     <div class="p-6 bg-white/60 dark:bg-gray-800/40 rounded-xl shadow-md backdrop-blur-sm animate-slide-in-right delay-200">
+                         <h3 class="font-semibold text-xl mb-3 flex items-center text-secondary-700 dark:text-secondary-300"><i data-lucide="globe" class="w-6 h-6 mr-2"></i>National Scalability</h3>
+                         <ul class="list-none space-y-2 text-sm text-gray-700 dark:text-gray-300 bullet-list">
+                            <li><i data-lucide="banknote" class="icon-success w-4 h-4"></i><span>Sector: ~3% GDP (₦183.4B Q3'24 Nom). <span class="source-text">NTSS</span></span></li>
+                            <li><i data-lucide="trending-up" class="icon-success w-4 h-4"></i><span>Market: $1.73B→$2.22B ('29), 6.45% CAGR. <span class="source-text">NTSS</span></span></li>
+                            <li><i data-lucide="users" class="icon-secondary w-4 h-4"></i><span>Users: 70.4%→82.1% penetration ('29). <span class="source-text">NTSS</span></span></li>
+                            <li><i data-lucide="copy" class="icon-secondary w-4 h-4"></i><span>Njem's model designed for replication.</span></li>
+                         </ul>
+                     </div>
+                </div>
             </div>
         </div>
+
+        <!-- Slide 8: Competition (Original Slide 8) (ID: slide-8) -->
+        <div id="slide-8" class="slide">
+             <div class="slide-content animate-fade-in max-w-5xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-800 dark:text-white font-display center-content">Competition: Unique Position in a Fragmented Landscape</h2>
+                <div class="grid md:grid-cols-2 gap-10 items-start">
+                    <!-- Competitors List -->
+                    <div class="space-y-4 animate-slide-in-left delay-100">
+                         <h3 class="font-semibold text-xl text-gray-700 dark:text-gray-300">Competitors:</h3>
+                         <ul class="list-none space-y-3 text-gray-600 dark:text-gray-400">
+                            <li><strong class="font-medium">Status Quo (Manual Hailing):</strong> Fragmented, no data, opaque pricing.</li>
+                            <li><strong class="font-medium">Ride-Hailing (Uber/Bolt):</strong> Car-focused, limited Keke/BRT, poor local maps.</li>
+                            <li><strong class="font-medium">Local Taxi Apps:</strong> Single-mode, limited tech/reach.</li>
+                         </ul>
+                    </div>
+                    <!-- Njem Differentiators -->
+                     <div class="p-6 bg-primary-50 dark:bg-primary-900/30 rounded-xl border-2 border-primary-300 dark:border-primary-700 shadow-lg animate-slide-in-right delay-200">
+                         <h3 class="font-semibold text-xl mb-3 text-primary-700 dark:text-primary-300">Our Differentiators:</h3>
+                         <ul class="list-none space-y-2 text-sm text-gray-700 dark:text-gray-300 bullet-list">
+                            <li><i data-lucide="check" class="icon-success w-4 h-4"></i><span>True Multi-Modal (BRT, Keke, Taxi)</span></li>
+                            <li><i data-lucide="check" class="icon-success w-4 h-4"></i><span>Hyper-Local Map Accuracy (Formal Driver Collaboration)</span></li>
+                            <li><i data-lucide="check" class="icon-success w-4 h-4"></i><span>AI Personalization + Blockchain Loyalty (NJEM Token)</span></li>
+                            <li><i data-lucide="check" class="icon-success w-4 h-4"></i><span>Strong Government Alignment (Leveraging Infrastructure)</span></li>
+                            <li><i data-lucide="check" class="icon-success w-4 h-4"></i><span>Designed for National Scale</span></li>
+                        </ul>
+                     </div>
+                </div>
+                 <div class="mt-8 center-content text-sm text-gray-500 dark:text-gray-400 italic">
+                     <!-- (Visual: Competitive Grid / Gartner Quadrant Graphic Recommended Here) -->
+                 </div>
+            </div>
+        </div>
+
+         <!-- Slide 9: Growth Strategy & Traction (Original Slide 9) (ID: slide-9) -->
+        <div id="slide-9" class="slide">
+            <div class="slide-content animate-fade-in max-w-5xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-800 dark:text-white font-display center-content">Growth Strategy & Traction: Phased Rollout</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                     <div class="p-6 bg-white dark:bg-gray-800/40 rounded-xl shadow animate-slide-in-up delay-100 hover-card">
+                         <h3 class="font-semibold text-lg mb-2 text-primary-700 dark:text-primary-300">Phase 1: MVP Launch (Enugu)</h3>
+                         <ul class="list-none space-y-1 text-xs text-gray-600 dark:text-gray-400 bullet-list">
+                             <li><i data-lucide="navigation" class="icon-primary w-4 h-4"></i><span>Align with BRT routes.</span></li>
+                             <li><i data-lucide="users" class="icon-secondary w-4 h-4"></i><span>Onboard 500+ operators.</span></li>
+                             <li><i data-lucide="list-checks" class="icon-accent w-4 h-4"></i><span>Launch core features.</span></li>
+                             <li><i data-lucide="user-check" class="icon-primary w-4 h-4"></i><span>Initiate Local Expert program.</span></li>
+                             <li><i data-lucide="trending-up" class="icon-success w-4 h-4"></i><span>Target: 20k+ trips/mo (6 mo).</span></li>
+                         </ul>
+                     </div>
+                     <div class="p-6 bg-white dark:bg-gray-800/40 rounded-xl shadow animate-slide-in-up delay-200 hover-card">
+                         <h3 class="font-semibold text-lg mb-2 text-secondary-700 dark:text-secondary-300">Phase 2: Enugu Scale & Enhance</h3>
+                          <ul class="list-none space-y-1 text-xs text-gray-600 dark:text-gray-400 bullet-list">
+                              <li><i data-lucide="network" class="icon-primary w-4 h-4"></i><span>Expand network.</span></li>
+                              <li><i data-lucide="coins" class="icon-secondary w-4 h-4"></i><span>Launch Loyalty (NJEM).</span></li>
+                              <li><i data-lucide="brain-circuit" class="icon-accent w-4 h-4"></i><span>Refine AI algorithms.</span></li>
+                              <li><i data-lucide="database" class="icon-primary w-4 h-4"></i><span>Develop data products.</span></li>
+                          </ul>
+                     </div>
+                     <div class="p-6 bg-white dark:bg-gray-800/40 rounded-xl shadow animate-slide-in-up delay-300 hover-card">
+                          <h3 class="font-semibold text-lg mb-2 text-accent-700 dark:text-accent-300">Phase 3: National Expansion</h3>
+                           <ul class="list-none space-y-1 text-xs text-gray-600 dark:text-gray-400 bullet-list">
+                               <li><i data-lucide="copy" class="icon-primary w-4 h-4"></i><span>Replicate model in new cities.</span></li>
+                               <li><i data-lucide="server" class="icon-secondary w-4 h-4"></i><span>Scale infrastructure.</span></li>
+                               <li><i data-lucide="handshake" class="icon-accent w-4 h-4"></i><span>Forge national partnerships.</span></li>
+                           </ul>
+                           <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                             <h4 class="font-semibold text-sm mb-1 text-green-600 dark:text-green-400">Current Traction:</h4>
+                              <p class="text-xs text-gray-600 dark:text-gray-400">Need validated; Local collab framework ready; MVP dev advanced.</p>
+                           </div>
+                     </div>
+                </div>
+                 <div class="mt-8 center-content text-sm text-gray-500 dark:text-gray-400 italic">
+                     <!-- (Visual: Phased Roadmap Graphic Recommended Here) -->
+                 </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Team (Original Slide 11) (ID: slide-10) -->
+        <div id="slide-10" class="slide">
+            <div class="slide-content animate-fade-in max-w-5xl">
+                 <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-800 dark:text-white font-display center-content">Experienced Team + Unmatched Local Insight</h2>
+                 <div class="grid md:grid-cols-2 gap-10 items-start">
+                     <!-- Core Team List -->
+                     <div class="p-6 bg-white/60 dark:bg-gray-800/40 rounded-xl shadow-lg animate-slide-in-left delay-100 backdrop-blur-sm">
+                          <h3 class="text-xl font-semibold mb-4 text-secondary-700 dark:text-secondary-300 flex items-center"><i data-lucide="users" class="w-6 h-6 mr-2"></i>Core Kaizen Team</h3>
+                          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Proven expertise in software engineering, platform architecture, data science (AI/ML), operations, and business development.</p>
+                          <ul class="list-none space-y-2 text-lg text-gray-800 dark:text-gray-200 team-list">
+                             <li><strong>Bethel Ibeagha:</strong> <span>Team Lead / Backend Developer</span></li>
+                             <li><strong>Nwobodo Somtochukwu:</strong> <span>Product Designer</span></li>
+                             <li><strong>Ojini Godspower:</strong> <span>Frontend Developer</span></li>
+                             <li><strong>Nnadi Joshua:</strong> <span>Frontend Developer</span></li>
+                         </ul>
+                     </div>
+                     <!-- Local Experts Advantage -->
+                      <div class="p-6 bg-primary-50 dark:bg-primary-900/30 rounded-xl shadow-lg border-2 border-primary-300 dark:border-primary-700 animate-slide-in-right delay-200">
+                         <h3 class="text-xl font-semibold mb-4 text-primary-700 dark:text-primary-300 flex items-center"><i data-lucide="map-pin" class="w-6 h-6 mr-2"></i>Strategic Advantage: Local Experts</h3>
+                         <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">Formal, <strong class="text-primary-600 dark:text-primary-400">partnerships</strong> with experienced Enugu drivers/union reps providing:</p>
+                         <ul class="list-none space-y-1 text-sm text-gray-600 dark:text-gray-400 bullet-list">
+                             <li><i data-lucide="check" class="icon-success w-4 h-4"></i><span>Unparalleled ground-truth map/route validation.</span></li>
+                             <li><i data-lucide="check" class="icon-success w-4 h-4"></i><span>Operational insights & practical feedback.</span></li>
+                             <li><i data-lucide="check" class="icon-success w-4 h-4"></i><span>Ensuring operator buy-in & platform relevance.</span></li>
+                         </ul>
+                     </div>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Why Invest Now? (Original Slide 13) (ID: slide-11) -->
+        <div id="slide-11" class="slide bg-gradient-primary">
+            <div class="slide-content animate-fade-in max-w-5xl">
+                 <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-800 dark:text-white font-display center-content">Why Partner with Njem Enugu Now?</h2>
+                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+                     <div class="p-4 bg-white/70 dark:bg-gray-800/50 rounded-lg shadow animate-slide-in-up delay-100 hover-card space-y-1">
+                         <i data-lucide="bar-chart-3" class="w-6 h-6 icon-primary"></i>
+                         <h4 class="font-semibold text-gray-800 dark:text-white">Huge Market</h4>
+                         <p class="text-xs text-gray-600 dark:text-gray-400">Multi-Trillion Naira potential.</p>
+                     </div>
+                     <div class="p-4 bg-white/70 dark:bg-gray-800/50 rounded-lg shadow animate-slide-in-up delay-200 hover-card space-y-1">
+                         <i data-lucide="clock" class="w-6 h-6 icon-secondary"></i>
+                         <h4 class="font-semibold text-gray-800 dark:text-white">Perfect Timing</h4>
+                         <p class="text-xs text-gray-600 dark:text-gray-400">Leverage Govt. infra NOW.</p>
+                     </div>
+                      <div class="p-4 bg-white/70 dark:bg-gray-800/50 rounded-lg shadow animate-slide-in-up delay-300 hover-card space-y-1">
+                         <i data-lucide="lightbulb" class="w-6 h-6 icon-accent"></i>
+                         <h4 class="font-semibold text-gray-800 dark:text-white">Unique Solution</h4>
+                         <p class="text-xs text-gray-600 dark:text-gray-400">Multi-Modal + Local Accuracy.</p>
+                     </div>
+                      <div class="p-4 bg-white/70 dark:bg-gray-800/50 rounded-lg shadow animate-slide-in-up delay-400 hover-card space-y-1">
+                         <i data-lucide="cpu" class="w-6 h-6 icon-primary"></i>
+                         <h4 class="font-semibold text-gray-800 dark:text-white">Tech Edge</h4>
+                         <p class="text-xs text-gray-600 dark:text-gray-400">AI (ETA) + Blockchain.</p>
+                     </div>
+                      <div class="p-4 bg-white/70 dark:bg-gray-800/50 rounded-lg shadow animate-slide-in-up delay-500 hover-card space-y-1">
+                         <i data-lucide="database" class="w-6 h-6 icon-secondary"></i>
+                         <h4 class="font-semibold text-gray-800 dark:text-white">Strong Model</h4>
+                         <p class="text-xs text-gray-600 dark:text-gray-400">Multiple Revenue Streams.</p>
+                     </div>
+                       <div class="p-4 bg-white/70 dark:bg-gray-800/50 rounded-lg shadow animate-slide-in-up delay-600 hover-card space-y-1">
+                         <i data-lucide="check-check" class="w-6 h-6 icon-accent"></i>
+                         <h4 class="font-semibold text-gray-800 dark:text-white">Proven Need & MVP</h4>
+                         <p class="text-xs text-gray-600 dark:text-gray-400">Solves daily pain; core tech ready.</p>
+                     </div>
+                      <div class="p-4 bg-white/70 dark:bg-gray-800/50 rounded-lg shadow animate-slide-in-up delay-700 hover-card space-y-1">
+                         <i data-lucide="scaling" class="w-6 h-6 icon-primary"></i>
+                         <h4 class="font-semibold text-gray-800 dark:text-white">Scalable Model</h4>
+                         <p class="text-xs text-gray-600 dark:text-gray-400">National replication blueprint.</p>
+                     </div>
+                      <div class="p-4 bg-white/70 dark:bg-gray-800/50 rounded-lg shadow animate-slide-in-up delay-800 hover-card space-y-1">
+                         <i data-lucide="users" class="w-6 h-6 icon-secondary"></i>
+                         <h4 class="font-semibold text-gray-800 dark:text-white">Grounded Team</h4>
+                         <p class="text-xs text-gray-600 dark:text-gray-400">Tech expertise + local insight.</p>
+                     </div>
+                 </div>
+                 <div class="mt-10">
+                      <p class="text-xl md:text-2xl font-semibold text-primary-700 dark:text-primary-300 center-content">
+                         Seeking Funding, Mentorship and Contributors to launch, prove, and prepare for scale.
+                      </p>
+                       <p class="mt-6 text-center text-lg text-gray-700 dark:text-gray-300 font-display">Thank You! Questions?</p> <!-- Added simple closing/Q&A -->
+                 </div>
+            </div>
+        </div>
+
 
     </div> <!-- End Presentation Container -->
 
@@ -809,30 +437,22 @@
             const slideNumberElement = document.getElementById('slide-number');
 
             if (!slides.length) { console.warn("No elements with class 'slide' found."); return; }
-            if (!prevButton || !nextButton) { console.warn("Navigation buttons not found. Check IDs 'prev-slide' and 'next-slide'."); }
-            if (!slideNumberElement) { console.warn("Slide number element not found. Check ID 'slide-number'."); }
+            if (!prevButton || !nextButton) { console.warn("Navigation buttons not found."); }
+            if (!slideNumberElement) { console.warn("Slide number element not found."); }
 
             let currentSlideIndex = 0;
-            const totalSlides = slides.length;
+            const totalSlides = slides.length; // Automatically counts remaining slides (11)
 
             function showSlide(index) {
                  if (totalSlides === 0) return;
                 index = Math.max(0, Math.min(index, totalSlides - 1));
-                const oldIndex = currentSlideIndex;
 
                 slides.forEach((slide, i) => {
-                    slide.style.zIndex = (i === index) ? 10 : 1; // Current slide on top
+                    slide.style.zIndex = (i === index) ? 10 : 1;
                     if (i === index) {
                         slide.classList.add('active');
-                        // Add entrance animation class based on direction if needed
-                        // Example: slide.classList.add(index > oldIndex ? 'animate-slide-in-right' : 'animate-slide-in-left');
-                    } else if (i === oldIndex) {
-                        // Optionally add exit animation class
-                        slide.classList.remove('active');
-                        // Example: slide.classList.add('animate-fade-out');
                     } else {
                          slide.classList.remove('active');
-                         // Ensure other slides don't have lingering animation classes
                     }
                 });
                 currentSlideIndex = index;
@@ -855,7 +475,7 @@
             function prevSlide() { if (currentSlideIndex > 0) showSlide(currentSlideIndex - 1); }
 
             function handleKeydown(event) {
-                if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
+                if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA' || event.target.isContentEditable) return;
                 if (totalSlides === 0) return;
 
                 if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
@@ -883,19 +503,17 @@
                      themeToggleDarkIcon.classList.remove('hidden');
                      themeToggleLightIcon.classList.add('hidden');
                  }
-                 lucide.createIcons(); // Re-render icons on theme change if needed
+                 lucide.createIcons(); // Re-render icons
              }
-            applyTheme(); // Apply initial theme
+            applyTheme(); // Initial theme
 
             themeToggleBtn?.addEventListener('click', () => {
                 if (!themeToggleLightIcon || !themeToggleDarkIcon) return;
-                // Toggle icons first
                 themeToggleLightIcon.classList.toggle('hidden');
                 themeToggleDarkIcon.classList.toggle('hidden');
-                // Then toggle the theme class
                 const isDark = document.documentElement.classList.toggle('dark');
                 localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
-                lucide.createIcons(); // Re-render icons after theme change
+                lucide.createIcons(); // Re-render icons
             });
 
             // Event Listeners
